@@ -1,0 +1,182 @@
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+.clearfix {
+	&:after {
+	   content: " "; /* Older browser do not support empty content */
+	   visibility: hidden;
+	   display: block;
+	   height: 0;
+	   clear: both;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: @bold;
+	letter-spacing: 1px;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: 56px;
+	
+	@media(min-width: 768px) {
+		font-size: 76.244px;
+	}
+}
+
+h2 {
+	font-size: 34.611px;
+	
+	@media(min-width: 768px) {
+		font-size: 47.123px;
+	}
+}
+
+h3 {
+	font-size: 21.391px;
+	
+	@media(min-width: 768px) {
+		font-size: 29.124px;
+	}
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+	li {
+		list-style-type: none;	
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+.body-copy {
+	font-size: @p-size;
+	font-weight: @light;
+	line-height: 27px;	
+}
+
+.script {
+	font-family: 'voltage', "Brush Script MT", cursive;
+	font-weight: @light;
+}
+
+p, ol, ul {
+	margin: 0;
+	.body-copy;	
+}
+
+a {
+	font-weight: @medium;
+	letter-spacing: 1px;
+	text-decoration: none;
+	text-transform: uppercase;
+	
+	&:focus, &:hover, &:active {
+		outline: none;
+	}
+}
+
+.btn-shadow {
+	box-shadow: 2px 2px 2px 0px rgba(69,52,52,.2);
+	-webkit-box-shadow: 2px 2px 2px 0px rgba(69,52,52,.2);
+	-moz-box-shadow: 2px 2px 2px 0px rgba(69,52,52,.2);
+}
+
+.btn {
+	border-radius: 2em;
+	display: inline-block;
+	.btn-shadow();
+	
+	a {
+		display: block;
+		padding: .4em 1em;
+	}
+}
+
+.btn-primary {
+	background: @white;
+	
+	a {
+		color: @brand-gray !important;
+		transition: color 0.2s ease-in-out;
+		-moz-transition: color 0.2s ease-in-out;
+		-o-transition: color 0.2s ease-in-out;
+		-webkit-transition: color 0.2s ease-in-out;
+		
+		
+	}
+	
+	&:hover {
+		a {
+			color: @brand-primary !important;
+		}
+	}
+}
+
+.btn-secondary {
+	background: @brand-gray;
+	
+	a {
+		color: @white !important;
+		transition: color 0.2s ease-in-out;
+		-moz-transition: color 0.2s ease-in-out;
+		-o-transition: color 0.2s ease-in-out;
+		-webkit-transition: color 0.2s ease-in-out;
+	}
+	
+	&:hover {
+		a {
+			color: @brand-secondary !important;
+		}
+	}
+}
+
+.gradient {
+	background: @brand-primary; /* Old browsers */
+	background-image: -moz-linear-gradient(-45deg, @brand-secondary 0%, @brand-primary 100%); /* FF3.6-15 */
+	background-image: -webkit-linear-gradient(-45deg, @brand-secondary 0%, @brand-primary 100%); /* Chrome10-25,Safari5.1-6 */
+	background-image: linear-gradient(135deg, @brand-secondary 0%, @brand-primary 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@brand-secondary', endColorstr='@brand-primary',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.maxwidth {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1000px;
+}
+
+.inner {
+	.maxwidth();
+	.clearfix();
+}
+
+.home-section {
+	padding: @sm-pad 10px @sm-pad 10px;
+	
+	@media (min-width: 500px) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	
+	@media (min-width: 768px) {
+		padding-bottom: @lg-pad;
+	}
+	
+	h2 {
+		margin-bottom: @sm-pad;
+		text-align: center;
+	}
+}
+
+.home-section-alt {
+	padding: @sm-pad 15px;
+	text-align: center;
+}
